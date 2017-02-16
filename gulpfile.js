@@ -15,6 +15,13 @@ let gulp = require('gulp'),
 	http = require('http'),
 	st = require('st');
 
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
 const vendor = {
 	scripts: [
 		'bower_components/vivus/dist/vivus.js',
